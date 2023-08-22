@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
-    <link href="output.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link
       rel="stylesheet"
@@ -13,6 +14,7 @@
     />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
+    <link href="output.css" rel="stylesheet">
     <script src="script.js" defer></script>
     <title>giarddesign</title>
   </head>
@@ -22,17 +24,22 @@
         <img src="public/logo.svg" alt="Logo">
       </div>
       <div class="hidden sm:flex items-center">
-        <a href="#" class="flex items-center mr-4 dropdown-trigger offer-button">
-          Oferta <img src="public/expand-icon.svg" alt="Expand">
+        <a href="#" class="flex items-center mr-4 dropdown-trigger offer-button hover-underline-animation">
+          <span class="flex items-center">
+          <span class="mr-1">Oferta</span> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M2.13017 4.81427C1.95661 4.6407 1.95661 4.3593 2.13017 4.18573C2.28796 4.02794 2.53487 4.0136 2.70887 4.1427L2.75871 4.18573L6 7.42681L9.24129 4.18573C9.39907 4.02794 9.64599 4.0136 9.81998 4.1427L9.86983 4.18573C10.0276 4.34352 10.042 4.59043 9.91286 4.76442L9.86983 4.81427L6.31427 8.36983C6.15648 8.52761 5.90957 8.54196 5.73558 8.41286L5.68573 8.36983L2.13017 4.81427Z" fill="#111111"/>
+            </svg>
+          </span>
         </a>
         <div class="dropdown-content hidden">
-          <a href="#" class="dropdown-item">Projekty</a>
-          <a href="#" class="dropdown-item">Wizualizacje</a>
-          <a href="#" class="dropdown-item">Realizacje</a>
-        </div>                
-        <a href="#" class="mr-4">O firmie</a>
-        <a href="#" class="mr-4">Realizacja</a>
-        <a href="#" class="mr-4">Kontakt</a>
+          <a href="#offer" class="dropdown-item">Projekty</a>
+          <a href="#offer" class="dropdown-item">Wizualizacje</a>
+          <a href="#offer" class="dropdown-item">Realizacje</a>
+        </div>
+        <a href="#about" class="mr-4 hover-underline-animation">O firmie</a>
+        <a href="#projects" class="mr-4 hover-underline-animation">Realizacja</a>
+        <a href="mailto:giarddesign@kontakt.pl" class="mr-4 hover-underline-animation">Kontakt</a>
         <div class="search-bar">
           <input type="text" class="search-input" placeholder="Szukaj...">
           <div class="search-icon">
@@ -49,43 +56,104 @@
       </button>
     </nav>
 
-    <section class="relative">
-      <img src="public/Intro1.jpg" alt="Garden" class="w-full h-auto blur-sm sm:hidden">
-      <div class="absolute top-0 left-0 p-8 text-black text-center sm:p-0 sm:flex sm:static">
-        <div class="bg-custom-beige bg-opacity-80 rounded-lg p-4 sm:bg-opacity-100 sm:rounded-none sm:w-1/2 sm:py-8 sm:px-6 md:px-12 md:py-16 sm:flex sm:flex-col sm:justify-center fullhd:px-36 2k:px-64">
-          <h1 class="text-4xl text-left font-medium mb-6 sm:text-3xl sm:mb-8 lg:mb-10 lg:text-5xl fullhd:text-6xl" data-aos="fade-up" data-aos-delay="150">Nowoczesna aranżacja Twojego ogrodu</h1>
-          <p class="text-base text-left mb-6 sm:mb-12 sm:text-sm lg:text-lg fullhd:text-xl" data-aos="fade-up" data-aos-delay="250">Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.</p>
-          <div class="lg:flex lg:justify-between">
-            <a href="#" class="text-sm bg-custom-green text-white px-4 py-2 rounded-3xl mb-4 block lg:mb-0 lg:text-base lg:py-4" data-aos="fade-up" data-aos-delay="350">Skontaktuj się z nami</a>
-            <a href="#" class="text-sm bg-transparent text-custom-green px-4 py-2 rounded-3xl border border-custom-green block flex justify-center items-center gap-2 lg:text-base" data-aos="fade-up" data-aos-delay="350">
-              Zobacz nasze realizacje
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                <path d="M16 8.49529L15.1043 7.59959L8.63642 14.0769L8.63642 0.5L7.36358 0.5L7.36358 14.0675L0.895699 7.59959L9.54553e-08 8.49529L8.00471 16.5L16 8.49529Z" fill="#1B5B31"/>
-              </svg>
-            </a>
+    <section class="swiper-container overflow-hidden relative">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="relative">
+            <img src="public/Intro1.jpg" alt="Garden" class="w-full h-auto blur-sm sm:hidden">
+            <div class="absolute top-0 left-0 p-8 text-black text-center sm:p-0 sm:flex sm:static">
+              <div class="bg-custom-beige bg-opacity-80 rounded-lg p-4 sm:bg-opacity-100 sm:rounded-none sm:w-1/2 sm:py-8 sm:px-6 md:px-12 md:py-16 sm:flex sm:flex-col sm:justify-center fullhd:px-36 2k:px-64">
+                <h1 class="text-4xl text-left font-medium mb-6 sm:text-3xl sm:mb-8 lg:mb-10 lg:text-5xl fullhd:text-6xl" data-aos="fade-up" data-aos-delay="150">Nowoczesna aranżacja Twojego ogrodu</h1>
+                <p class="text-base text-left mb-6 sm:mb-12 sm:text-sm lg:text-lg fullhd:text-xl" data-aos="fade-up" data-aos-delay="250">Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.</p>
+                <div class="lg:flex lg:justify-between">
+                  <a href="mailto:giarddesign@kontakt.pl" class="text-sm bg-custom-green text-white px-4 py-2 rounded-3xl mb-4 block lg:mb-0 lg:text-base lg:py-4" data-aos="fade-up" data-aos-delay="350">Skontaktuj się z nami</a>
+                  <a href="#projects" class="text-sm bg-transparent text-custom-green px-4 py-2 rounded-3xl border border-custom-green block flex justify-center items-center gap-2 lg:text-base" data-aos="fade-up" data-aos-delay="350">
+                    Zobacz nasze realizacje
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                      <path d="M16 8.49529L15.1043 7.59959L8.63642 14.0769L8.63642 0.5L7.36358 0.5L7.36358 14.0675L0.895699 7.59959L9.54553e-08 8.49529L8.00471 16.5L16 8.49529Z" fill="#1B5B31"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="hidden sm:block sm:w-1/2 bg-cover">
+                <img src="public/Intro1.jpg" alt="Garden" class="sm:h-auto lg:h-80v w-full object-cover">
+              </div>
+            </div>
           </div>
         </div>
-        <div class="hidden sm:block sm:w-1/2 bg-cover">
-          <img src="public/Intro1.jpg" alt="Garden" class="sm:h-auto lg:h-80v w-full object-cover">
+        <div class="swiper-slide">
+          <div class="relative">
+            <img src="public/Intro1.jpg" alt="Garden" class="w-full h-auto blur-sm sm:hidden">
+            <div class="absolute top-0 left-0 p-8 text-black text-center sm:p-0 sm:flex sm:static">
+              <div class="bg-custom-beige bg-opacity-80 rounded-lg p-4 sm:bg-opacity-100 sm:rounded-none sm:w-1/2 sm:py-8 sm:px-6 md:px-12 md:py-16 sm:flex sm:flex-col sm:justify-center fullhd:px-36 2k:px-64">
+                <h1 class="text-4xl text-left font-medium mb-6 sm:text-3xl sm:mb-8 lg:mb-10 lg:text-5xl fullhd:text-6xl" data-aos="fade-up" data-aos-delay="150">Lorem ipsum dolor</h1>
+                <p class="text-base text-left mb-6 sm:mb-12 sm:text-sm lg:text-lg fullhd:text-xl" data-aos="fade-up" data-aos-delay="250">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione labore at reprehenderit qui quas in aut iusto voluptate magnam hic totam odio accusantium iste officia doloribus nesciunt, omnis illo architecto!</p>
+                <div class="lg:flex lg:justify-between">
+                  <a href="mailto:giarddesign@kontakt.pl" class="text-sm bg-custom-green text-white px-4 py-2 rounded-3xl mb-4 block lg:mb-0 lg:text-base lg:py-4" data-aos="fade-up" data-aos-delay="350">Skontaktuj się z nami</a>
+                  <a href="#projects" class="text-sm bg-transparent text-custom-green px-4 py-2 rounded-3xl border border-custom-green block flex justify-center items-center gap-2 lg:text-base" data-aos="fade-up" data-aos-delay="350">
+                    Zobacz nasze realizacje
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                      <path d="M16 8.49529L15.1043 7.59959L8.63642 14.0769L8.63642 0.5L7.36358 0.5L7.36358 14.0675L0.895699 7.59959L9.54553e-08 8.49529L8.00471 16.5L16 8.49529Z" fill="#1B5B31"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="hidden sm:block sm:w-1/2 bg-cover">
+                <img src="public/Intro1.jpg" alt="Garden" class="sm:h-auto lg:h-80v w-full object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="relative">
+            <img src="public/Intro1.jpg" alt="Garden" class="w-full h-auto blur-sm sm:hidden">
+            <div class="absolute top-0 left-0 p-8 text-black text-center sm:p-0 sm:flex sm:static">
+              <div class="bg-custom-beige bg-opacity-80 rounded-lg p-4 sm:bg-opacity-100 sm:rounded-none sm:w-1/2 sm:py-8 sm:px-6 md:px-12 md:py-16 sm:flex sm:flex-col sm:justify-center fullhd:px-36 2k:px-64">
+                <h1 class="text-4xl text-left font-medium mb-6 sm:text-3xl sm:mb-8 lg:mb-10 lg:text-5xl fullhd:text-6xl" data-aos="fade-up" data-aos-delay="150">Nowoczesna aranżacja Twojego ogrodu</h1>
+                <p class="text-base text-left mb-6 sm:mb-12 sm:text-sm lg:text-lg fullhd:text-xl" data-aos="fade-up" data-aos-delay="250">Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.</p>
+                <div class="lg:flex lg:justify-between">
+                  <a href="mailto:giarddesign@kontakt.pl" class="text-sm bg-custom-green text-white px-4 py-2 rounded-3xl mb-4 block lg:mb-0 lg:text-base lg:py-4" data-aos="fade-up" data-aos-delay="350">Skontaktuj się z nami</a>
+                  <a href="#projects" class="text-sm bg-transparent text-custom-green px-4 py-2 rounded-3xl border border-custom-green block flex justify-center items-center gap-2 lg:text-base" data-aos="fade-up" data-aos-delay="350">
+                    Zobacz nasze realizacje
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                      <path d="M16 8.49529L15.1043 7.59959L8.63642 14.0769L8.63642 0.5L7.36358 0.5L7.36358 14.0675L0.895699 7.59959L9.54553e-08 8.49529L8.00471 16.5L16 8.49529Z" fill="#1B5B31"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="hidden sm:block sm:w-1/2 bg-cover">
+                <img src="public/Intro1.jpg" alt="Garden" class="sm:h-auto lg:h-80v w-full object-cover">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="swiper-pagination absolute"></div>
+      <div class="swiper-button-next text-white hidden lg:block"></div>
+      <div class="swiper-button-prev text-white hidden lg:block"></div>
     </section>
 
     <div class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 mobile-menu">
       <div class="flex flex-col h-full bg-white p-4 px-8">
-        <button class="mb-4 ml-auto close-button">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        </button>
-        <a href="#" class="text-2xl mb-4 text-gray-900">Oferta</a>
-        <a href="#" class="text-2xl mb-4 text-gray-900">O firmie</a>
-        <a href="#" class="text-2xl mb-4 text-gray-900">Realizacja</a>
-        <a href="#" class="text-2xl mb-4 text-gray-900">Kontakt</a>
+        <div class="flex justify-between">
+          <div>
+            <img src="public/logo.svg" alt="Logo">
+          </div>
+          <button class="mb-4 ml-auto close-button">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <hr class="mb-2">
+        <a href="#offer" class="text-2xl mb-4 text-gray-900 hover-underline-animation">Oferta</a>
+        <a href="#about" class="text-2xl mb-4 text-gray-900 hover-underline-animation">O firmie</a>
+        <a href="#projects" class="text-2xl mb-4 text-gray-900 hover-underline-animation">Realizacja</a>
+        <a href="mailto:giarddesign@kontakt.pl" class="text-2xl mb-4 text-gray-900 hover-underline-animation">Kontakt</a>
       </div>
     </div>
 
-    <section class="bg-custom-grey py-16 sm:px-12 lg:h-80v lg:flex lg:flex-col lg:justify-center fullhd:px-36 fullhd:gap-10 2k:px-64">
+    <section class="bg-custom-grey py-16 sm:px-12 lg:h-80v lg:flex lg:flex-col lg:justify-center fullhd:px-36 fullhd:gap-10 2k:px-64" id="offer">
       <div class="lg:px-20 fullhd:px-24">
         <p class="text-xs text-custom-green mb-4 mx-8 fullhd:text-base">Oferta</p>
         <h2 class="text-3xl font-medium mb-8 mx-8 fullhd:text-4xl">Działamy kompleksowo</h2>
@@ -105,7 +173,7 @@
             </svg>
           </a>
         </div>
-        <div class="bg-white rounded-lg p-6 flex flex-col fullhd:p-12" data-aos="flip-right" data-aos-delay="350">
+        <div class="bg-white rounded-lg p-6 flex flex-col justify-between fullhd:p-12" data-aos="flip-right" data-aos-delay="350">
           <img src="public/offer-icon-2.png" alt="Wizualizacje" class="h-auto w-8 mb-6">
           <h3 class="font-medium mb-2 sm:text-base md:text-lg lg:text-xl fullhd:text-2xl">Wizualizacje</h3>
           <p class="mb-6 sm:text-xs md:text-sm fullhd:text-base">Przedstawimy Ci projekty koncepcyjne w postaci wirtualnego spaceru animowanego w technologii 3D.</p>
@@ -120,7 +188,7 @@
           <img src="public/offer-icon-3.png" alt="Realizacje" class="h-auto w-8 mb-6">
           <h3 class="font-medium mb-2 sm:text-base md:text-lg lg:text-xl fullhd:text-2xl">Realizacje</h3>
           <p class="mb-6 sm:text-xs md:text-sm fullhd:text-base">Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i zaawansowanych technologii.</p>
-          <a href="#" class="text-custom-green underline underline-offset-8 flex items-center gap-2">
+          <a href="#projects" class="text-custom-green underline underline-offset-8 flex items-center gap-2">
             Zobacz nasze realizacje
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
               <path d="M7.99528 -1.20755e-06L7.09959 0.895696L13.5769 7.36358L-7.5502e-07 7.36358L-6.43745e-07 8.63642L13.5675 8.63642L7.09959 15.1043L7.99529 16L16 7.99529L7.99528 -1.20755e-06Z" fill="#1B5B31"/>
@@ -136,7 +204,7 @@
         <div class="hidden sm:block sm:w-1/2 bg-cover">
           <img src="public/About1.jpg" alt="Garden" class="h-full w-full object-cover lg:h-80v transform -scale-x-100">
         </div>
-        <div class="bg-custom-green bg-opacity-80 rounded-lg p-4 sm:bg-opacity-100 sm:rounded-none sm:w-1/2 sm:px-12 sm:py-16 sm:flex sm:flex-col sm:justify-center fullhd:px-36 2k:px-64">
+        <div class="bg-custom-green bg-opacity-80 rounded-lg p-4 sm:bg-opacity-100 sm:rounded-none sm:w-1/2 sm:px-12 sm:py-16 sm:flex sm:flex-col sm:justify-center fullhd:px-36 2k:px-64" id="about">
           <p class="text-xs text-custom-grey mb-4 text-left fullhd:text-base" data-aos="fade-up" data-aos-delay="150">O firmie</p>
           <h1 class="text-custom-grey text-left font-medium mb-6 text-3xl md:text-4xl sm:mb-8 fullhd:text-5xl" data-aos="fade-up" data-aos-delay="250">Tworzymy z pasją</h1>
           <p class="text-custom-grey text-left mb-6 sm:text-sm md:text-base sm:mb-12 lg:text-lg fullhd:text-xl" data-aos="fade-up" data-aos-delay="350">Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą wykwalifikowani projektanci oraz architekci, których zadaniem jest rozpoznanie i realizacja potrzeb każdego Klienta. Nasza specjalizacja to przestrzenie nowoczesne, które charakteryzuje minimalizm, geometria i elegancka prostota. Tworzymy ogrody małoobsługowe, dostosowane do współczesnego trybu życia.</p>
@@ -150,7 +218,7 @@
       </div>
     </section>
 
-    <section class="gallery bg-custom-beige py-16 sm:px-12 fullhd:px-36 2k:px-64">
+    <section class="gallery bg-custom-beige py-16 sm:px-12 fullhd:px-36 2k:px-64" id="projects">
       <p class="text-xs text-custom-green mb-4 mx-8 fullhd:text-base">Realizacje</p>
       <h2 class="text-3xl font-medium mb-8 mx-8 fullhd:text-4xl">Nasze projekty</h2>
       <div class="gradient-overlay"></div>
@@ -241,7 +309,7 @@
         <div class="sm:w-3/12">
           <p class="text-custom-grey text-left landscape:text-center mb-6 sm:text-sm md:text-base">Śledź nasze najnowsze realizacje!</p>
           <div class="px-8 sm:landscape:px-4 md:landscape:px-8">
-            <a href="#" class="text-sm bg-custom-grey text-custom-green px-4 py-2 rounded-3xl text-center block">Instagram</a>
+            <a href="https://instagram.com/" class="text-sm bg-custom-grey text-custom-green px-4 py-2 rounded-3xl text-center block">Instagram</a>
           </div>
         </div>
       </div>
@@ -254,7 +322,7 @@
         </div>
         <div class="text-center sm:text-right">
           <p class="mb-4">Daj znać, co możemy dla Ciebie zrobić!</p>
-          <a href="#" class="text-custom-grey bg-custom-green px-4 py-2 rounded-3xl sm:mr-0 sm:mb-0 block text-center">Skontaktuj się z nami</a>
+          <a href="mailto:giarddesign@kontakt.pl" class="text-custom-grey bg-custom-green px-4 py-2 rounded-3xl sm:mr-0 sm:mb-0 block text-center">Skontaktuj się z nami</a>
         </div>
       </div>
       <div class="flex justify-center px-8 sm:px-0">
@@ -262,19 +330,19 @@
       </div>
       <div class="mx-auto flex flex-col sm:flex-row justify-between items-center px-8 sm:px-0">
         <div class="flex mb-4 sm:mb-0 gap-4">
-          <a href="#" class="text-sm">Kontakt</a>
-          <a href="#" class="text-sm">Instagram</a>
-          <a href="#" class="text-sm">Facebook</a>
-          <a href="#" class="text-sm">Linkedin</a>
+          <a href="mailto:giarddesign@kontakt.pl" class="text-sm">Kontakt</a>
+          <a href="https://instagram.com/" class="text-sm">Instagram</a>
+          <a href="https://www.facebook.com/" class="text-sm">Facebook</a>
+          <a href="https://linkedin.com/" class="text-sm">Linkedin</a>
         </div>
         <div class="flex justify-between gap-4">
-          <p class="text-sm">000-000-000</p>
-          <p class="text-sm">giarddesign@kontakt.pl</p>
+          <a href="tel:000000000" class="text-sm">000-000-000</a>
+          <a href="mailto:giarddesign@kontakt.pl" class="text-sm">giarddesign@kontakt.pl</a>
         </div>
       </div>
       <div class="mx-auto flex flex-col sm:flex-row justify-between items-center px-8 mt-8 gap-4 sm:px-0">
         <p class="text-sm">Prawa zastrzeżone © 2022</p>
-        <a class="text-sm" href="#">
+        <a class="text-sm" href="https://adrespect.pl/">
           made by <img src="public/logo3.svg" alt="adRespect logo">
         </a>
       </div>
