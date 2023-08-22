@@ -1457,11 +1457,6 @@ body, p, a {
     padding-right: 10rem;
   }
 
-  .lg\:py-4 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
   .lg\:text-5xl {
     font-size: 3rem;
     line-height: 1;
