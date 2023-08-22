@@ -1,29 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl" class="scroll-smooth">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
     <link href="../dist/output.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
     <script src="script.js" defer></script>
     <title>giarddesign</title>
   </head>
   <body>
-    <nav class="flex justify-between items-center p-4 px-8 md:px-12 fullhd:px-36 fullhd:py-6 2k:px-64">
+    <nav class="flex justify-between items-center p-4 px-8 sm:px-12 fullhd:px-36 fullhd:py-6 2k:px-64">
       <div>
         <img src="../public/logo.svg" alt="Logo">
       </div>
-      <div class="hidden md:flex items-center">
-        <a href="#" class="flex items-center mr-4">
+      <div class="hidden sm:flex items-center">
+        <a href="#" class="flex items-center mr-4 dropdown-trigger offer-button">
           Oferta <img src="../public/expand-icon.svg" alt="Expand">
         </a>
+        <div class="dropdown-content hidden">
+          <a href="#" class="dropdown-item">Projekty</a>
+          <a href="#" class="dropdown-item">Wizualizacje</a>
+          <a href="#" class="dropdown-item">Realizacje</a>
+        </div>                
         <a href="#" class="mr-4">O firmie</a>
         <a href="#" class="mr-4">Realizacja</a>
         <a href="#" class="mr-4">Kontakt</a>
-        <img src="../public/search-icon.svg" alt="Search">
+        <div class="search-bar">
+          <input type="text" class="search-input" placeholder="Szukaj...">
+          <div class="search-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2.25C5.71979 2.25 2.25 5.71979 2.25 10C2.25 14.2802 5.71979 17.75 10 17.75C11.87 17.75 13.5853 17.0877 14.9242 15.9848L20.4697 21.5303L20.5538 21.6029C20.8474 21.8208 21.2641 21.7966 21.5303 21.5303C21.8232 21.2374 21.8232 20.7626 21.5303 20.4697L15.9848 14.9242C17.0877 13.5853 17.75 11.87 17.75 10C17.75 5.71979 14.2802 2.25 10 2.25ZM10 3.75C13.4518 3.75 16.25 6.54822 16.25 10C16.25 13.4518 13.4518 16.25 10 16.25C6.54822 16.25 3.75 13.4518 3.75 10C3.75 6.54822 6.54822 3.75 10 3.75Z" fill="#111111"/>
+            </svg>
+          </div>
+        </div>              
       </div>
-      <button class="md:hidden flex items-center burger-button">
+      <button class="sm:hidden flex items-center burger-button">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -31,14 +50,14 @@
     </nav>
 
     <section class="relative">
-      <img src="../public/Intro1.jpg" alt="Garden" class="w-full h-auto blur-sm md:hidden">
-      <div class="absolute top-0 left-0 p-8 text-black text-center md:p-0 md:flex md:static">
-        <div class="bg-custom-beige bg-opacity-80 rounded-lg p-4 md:bg-opacity-100 md:rounded-none md:w-1/2 md:px-12 md:py-16 md:flex md:flex-col md:justify-center fullhd:px-36 2k:px-64">
-          <h1 class="text-4xl text-left font-medium mb-6 md:mb-8 lg:mb-10 lg:text-5xl fullhd:text-6xl">Nowoczesna aranżacja Twojego ogrodu</h1>
-          <p class="text-base text-left mb-6 md:mb-12 lg:text-lg fullhd:text-xl">Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.</p>
+      <img src="../public/Intro1.jpg" alt="Garden" class="w-full h-auto blur-sm sm:hidden">
+      <div class="absolute top-0 left-0 p-8 text-black text-center sm:p-0 sm:flex sm:static">
+        <div class="bg-custom-beige bg-opacity-80 rounded-lg p-4 sm:bg-opacity-100 sm:rounded-none sm:w-1/2 sm:py-8 sm:px-6 md:px-12 md:py-16 sm:flex sm:flex-col sm:justify-center fullhd:px-36 2k:px-64">
+          <h1 class="text-4xl text-left font-medium mb-6 sm:text-3xl sm:mb-8 lg:mb-10 lg:text-5xl fullhd:text-6xl" data-aos="fade-up" data-aos-delay="150">Nowoczesna aranżacja Twojego ogrodu</h1>
+          <p class="text-base text-left mb-6 sm:mb-12 sm:text-sm lg:text-lg fullhd:text-xl" data-aos="fade-up" data-aos-delay="250">Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem do każdego projektu.</p>
           <div class="lg:flex lg:justify-between">
-            <a href="#" class="text-sm bg-custom-green text-white px-4 py-2 rounded-3xl mb-4 block lg:mb-0 lg:text-base lg:py-4">Skontaktuj się z nami</a>
-            <a href="#" class="text-sm bg-transparent text-custom-green px-4 py-2 rounded-3xl border border-custom-green block flex justify-center items-center gap-2 lg:text-base">
+            <a href="#" class="text-sm bg-custom-green text-white px-4 py-2 rounded-3xl mb-4 block lg:mb-0 lg:text-base lg:py-4" data-aos="fade-up" data-aos-delay="350">Skontaktuj się z nami</a>
+            <a href="#" class="text-sm bg-transparent text-custom-green px-4 py-2 rounded-3xl border border-custom-green block flex justify-center items-center gap-2 lg:text-base" data-aos="fade-up" data-aos-delay="350">
               Zobacz nasze realizacje
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
                 <path d="M16 8.49529L15.1043 7.59959L8.63642 14.0769L8.63642 0.5L7.36358 0.5L7.36358 14.0675L0.895699 7.59959L9.54553e-08 8.49529L8.00471 16.5L16 8.49529Z" fill="#1B5B31"/>
@@ -46,8 +65,8 @@
             </a>
           </div>
         </div>
-        <div class="hidden md:block md:w-1/2 bg-cover">
-          <img src="../public/Intro1.jpg" alt="Garden" class="h-80v w-full object-cover">
+        <div class="hidden sm:block sm:w-1/2 bg-cover">
+          <img src="../public/Intro1.jpg" alt="Garden" class="sm:h-auto lg:h-80v w-full object-cover">
         </div>
       </div>
     </section>
@@ -59,26 +78,26 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
           </svg>
         </button>
-        <a href="#" class="text-2xl mb-4 text-gray-900">Offer</a>
-        <a href="#" class="text-2xl mb-4 text-gray-900">About us</a>
-        <a href="#" class="text-2xl mb-4 text-gray-900">Implementation</a>
-        <a href="#" class="text-2xl mb-4 text-gray-900">Contact</a>
+        <a href="#" class="text-2xl mb-4 text-gray-900">Oferta</a>
+        <a href="#" class="text-2xl mb-4 text-gray-900">O firmie</a>
+        <a href="#" class="text-2xl mb-4 text-gray-900">Realizacja</a>
+        <a href="#" class="text-2xl mb-4 text-gray-900">Kontakt</a>
       </div>
     </div>
 
-    <section class="bg-custom-grey py-16 md:px-12 lg:h-80v lg:flex lg:flex-col lg:justify-center fullhd:px-36 fullhd:gap-10 2k:px-64">
+    <section class="bg-custom-grey py-16 sm:px-12 lg:h-80v lg:flex lg:flex-col lg:justify-center fullhd:px-36 fullhd:gap-10 2k:px-64">
       <div class="lg:px-20 fullhd:px-24">
         <p class="text-xs text-custom-green mb-4 mx-8 fullhd:text-base">Oferta</p>
         <h2 class="text-3xl font-medium mb-8 mx-8 fullhd:text-4xl">Działamy kompleksowo</h2>
-        <p class="text-lg mb-8 mx-8 fullhd:text-xl md:max-w-4xl">
+        <p class="mb-8 mx-8 sm:text-sm md:text-lg fullhd:text-xl sm:max-w-4xl">
           Oferujemy kompletną obsługę inwestycji terenów zielonych. Projektujemy nowoczesne ogrody przydomowe oraz rezydencjonalne. Stworzymy dla Ciebie projekt, zwizualizujemy go i wcielimy w życie, a na każdym etapie posłużymy radą i wieloletnim doświadczeniem.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-8">
-        <div class="bg-white rounded-lg p-6 flex flex-col fullhd:p-12">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:landscape:gap-4 md:landscape:gap-8 mx-8">
+        <div class="bg-white rounded-lg p-6 flex flex-col fullhd:p-12" data-aos="flip-right" data-aos-delay="150">
           <img src="../public/offer-icon-1.png" alt="Projekty" class="h-auto w-8 mb-6">
-          <h3 class="text-lg font-medium mb-2 lg:text-xl fullhd:text-2xl">Projekty</h3>
-          <p class="text-sm mb-6 fullhd:text-base">Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym wykorzystaniem istniejącej przestrzeni.</p>
+          <h3 class="font-medium mb-2 sm:text-base md:text-lg lg:text-xl fullhd:text-2xl">Projekty</h3>
+          <p class="mb-6 sm:text-xs md:text-sm fullhd:text-base">Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym wykorzystaniem istniejącej przestrzeni.</p>
           <a href="#" class="text-custom-green flex items-center underline underline-offset-8 gap-2">
             Dowiedz się więcej
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
@@ -86,10 +105,10 @@
             </svg>
           </a>
         </div>
-        <div class="bg-white rounded-lg p-6 flex flex-col fullhd:p-12">
+        <div class="bg-white rounded-lg p-6 flex flex-col fullhd:p-12" data-aos="flip-right" data-aos-delay="350">
           <img src="../public/offer-icon-2.png" alt="Wizualizacje" class="h-auto w-8 mb-6">
-          <h3 class="text-lg font-medium mb-2 lg:text-xl fullhd:text-2xl">Wizualizacje</h3>
-          <p class="text-sm mb-6 fullhd:text-base">Przedstawimy Ci projekty koncepcyjne w postaci wirtualnego spaceru animowanego w technologii 3D.</p>
+          <h3 class="font-medium mb-2 sm:text-base md:text-lg lg:text-xl fullhd:text-2xl">Wizualizacje</h3>
+          <p class="mb-6 sm:text-xs md:text-sm fullhd:text-base">Przedstawimy Ci projekty koncepcyjne w postaci wirtualnego spaceru animowanego w technologii 3D.</p>
           <a href="#" class="text-custom-green underline underline-offset-8 flex items-center gap-2">
             Dowiedz się więcej
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
@@ -97,10 +116,10 @@
             </svg>
           </a>
         </div>
-        <div class="bg-white rounded-lg p-6 flex flex-col fullhd:p-12">
+        <div class="bg-white rounded-lg p-6 flex flex-col fullhd:p-12" data-aos="flip-right" data-aos-delay="550">
           <img src="../public/offer-icon-3.png" alt="Realizacje" class="h-auto w-8 mb-6">
-          <h3 class="text-lg font-medium mb-2 lg:text-xl fullhd:text-2xl">Realizacje</h3>
-          <p class="text-sm mb-6 fullhd:text-base">Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i zaawansowanych technologii.</p>
+          <h3 class="font-medium mb-2 sm:text-base md:text-lg lg:text-xl fullhd:text-2xl">Realizacje</h3>
+          <p class="mb-6 sm:text-xs md:text-sm fullhd:text-base">Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i zaawansowanych technologii.</p>
           <a href="#" class="text-custom-green underline underline-offset-8 flex items-center gap-2">
             Zobacz nasze realizacje
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
@@ -112,121 +131,137 @@
     </section>
 
     <section class="relative">
-      <img src="../public/About1.jpg" alt="House with garden" class="object-cover justify-end h-90v blur-sm transform -scale-x-100 md:hidden">
-      <div class="absolute top-0 left-0 p-8 text-black text-center md:p-0 md:flex md:static">
-        <div class="bg-custom-green bg-opacity-80 rounded-lg p-4 md:bg-opacity-100 md:rounded-none md:w-1/2 md:px-12 md:py-16 md:flex md:flex-col md:justify-center fullhd:px-36 2k:px-64">
-          <p class="text-xs text-custom-grey mb-4 text-left fullhd:text-base">O firmie</p>
-          <h1 class="text-custom-grey text-4xl text-left font-medium mb-6 md:mb-8 fullhd:text-5xl">Tworzymy z pasją</h1>
-          <p class="text-custom-grey text-base text-left mb-6 md:mb-12 lg:text-lg fullhd:text-xl">Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą wykwalifikowani projektanci oraz architekci, których zadaniem jest rozpoznanie i realizacja potrzeb każdego Klienta. Nasza specjalizacja to przestrzenie nowoczesne, które charakteryzuje minimalizm, geometria i elegancka prostota. Tworzymy ogrody małoobsługowe, dostosowane do współczesnego trybu życia.</p>
-          <a href="#" class="text-sm bg-transparent text-custom-grey px-4 py-2 rounded-3xl border border-custom-grey flex items-center justify-center gap-2 lg:text-base lg:w-2/5">
+      <img src="../public/About1.jpg" alt="House with garden" class="object-cover justify-end h-90v blur-sm transform -scale-x-100 sm:hidden">
+      <div class="absolute top-0 left-0 p-8 text-black text-center sm:p-0 sm:flex sm:static">
+        <div class="hidden sm:block sm:w-1/2 bg-cover">
+          <img src="../public/About1.jpg" alt="Garden" class="h-full w-full object-cover lg:h-80v transform -scale-x-100">
+        </div>
+        <div class="bg-custom-green bg-opacity-80 rounded-lg p-4 sm:bg-opacity-100 sm:rounded-none sm:w-1/2 sm:px-12 sm:py-16 sm:flex sm:flex-col sm:justify-center fullhd:px-36 2k:px-64">
+          <p class="text-xs text-custom-grey mb-4 text-left fullhd:text-base" data-aos="fade-up" data-aos-delay="150">O firmie</p>
+          <h1 class="text-custom-grey text-left font-medium mb-6 text-3xl md:text-4xl sm:mb-8 fullhd:text-5xl" data-aos="fade-up" data-aos-delay="250">Tworzymy z pasją</h1>
+          <p class="text-custom-grey text-left mb-6 sm:text-sm md:text-base sm:mb-12 lg:text-lg fullhd:text-xl" data-aos="fade-up" data-aos-delay="350">Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą wykwalifikowani projektanci oraz architekci, których zadaniem jest rozpoznanie i realizacja potrzeb każdego Klienta. Nasza specjalizacja to przestrzenie nowoczesne, które charakteryzuje minimalizm, geometria i elegancka prostota. Tworzymy ogrody małoobsługowe, dostosowane do współczesnego trybu życia.</p>
+          <a href="#" class="text-sm bg-transparent text-custom-grey px-4 py-2 rounded-3xl border border-custom-grey flex items-center justify-center gap-2 lg:text-base lg:w-2/5" data-aos="fade-up" data-aos-delay="450">
             Poznaj nas bliżej
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none">
               <path d="M7.99528 -1.20755e-06L7.09959 0.895696L13.5769 7.36358L-7.5502e-07 7.36358L-6.43745e-07 8.63642L13.5675 8.63642L7.09959 15.1043L7.99529 16L16 7.99529L7.99528 -1.20755e-06Z" fill="#F5F0EC"/>
             </svg>
           </a>
         </div>
-        <div class="hidden md:block md:w-1/2 bg-cover">
-          <img src="../public/About1.jpg" alt="Garden" class="h-full w-full object-cover lg:h-80v">
-        </div>
       </div>
     </section>
 
-    <section class="gallery bg-custom-beige py-16 md:px-12 fullhd:px-36 2k:px-64">
+    <section class="gallery bg-custom-beige py-16 sm:px-12 fullhd:px-36 2k:px-64">
       <p class="text-xs text-custom-green mb-4 mx-8 fullhd:text-base">Realizacje</p>
       <h2 class="text-3xl font-medium mb-8 mx-8 fullhd:text-4xl">Nasze projekty</h2>
       <div class="gradient-overlay"></div>
       <div class="grid" id="macy-container">
         <div class="grid-item">
           <div class="flex justify-center items-center h-full">
-            <img src="https://picsum.photos/id/10/600/800" alt="Random Image">
+            <a href="../public/gallery/1.jpg" data-fancybox="gallery" data-caption="Project #1">
+              <img src="../public/gallery/small/1.png">
+            </a>
           </div>
         </div>
         <div class="grid-item">
           <div class="flex justify-center items-center h-full">
-            <img src="https://picsum.photos/id/20/800/800" alt="Random Image">
+            <a href="../public/gallery/2.jpg" data-fancybox="gallery" data-caption="Project #2">
+              <img src="../public/gallery/small/2.png">
+            </a>
           </div>
         </div>
         <div class="grid-item">
           <div class="flex justify-center items-center h-full">
-            <img src="https://picsum.photos/id/30/800/500" alt="Random Image">
+            <a href="../public/gallery/3.jpg" data-fancybox="gallery" data-caption="Project #3">
+              <img src="../public/gallery/small/3.png">
+            </a>
           </div>
         </div>
         <div class="grid-item">
           <div class="flex justify-center items-center h-full">
-            <img src="https://picsum.photos/id/40/800/800" alt="Random Image">
+            <a href="../public/gallery/4.jpg" data-fancybox="gallery" data-caption="Project #4">
+              <img src="../public/gallery/small/4.png">
+            </a>
           </div>
         </div>
-        <div class="grid-item hidden">
+        <div class="grid-item">
           <div class="flex justify-center items-center h-full">
-            <img src="https://picsum.photos/id/80/400/800" alt="Random Image">
+            <a href="../public/gallery/5.jpg" data-fancybox="gallery" data-caption="Project #5">
+              <img src="../public/gallery/small/5.png">
+            </a>
           </div>
         </div>
-        <div class="grid-item hidden">
+        <div class="grid-item">
           <div class="flex justify-center items-center h-full">
-            <img src="https://picsum.photos/id/120/600/800" alt="Random Image">
+            <a href="../public/gallery/6.jpg" data-fancybox="gallery" data-caption="Project #6">
+              <img src="../public/gallery/small/6.png">
+            </a>
           </div>
         </div>
-        <div class="grid-item hidden">
+        <div class="grid-item">
           <div class="flex justify-center items-center h-full">
-            <img src="https://picsum.photos/id/140/800/300" alt="Random Image">
+            <a href="../public/gallery/7.jpg" data-fancybox="gallery" data-caption="Project #7">
+              <img src="../public/gallery/small/7.png">
+            </a>
           </div>
         </div>
-        <div class="grid-item hidden">
+        <div class="grid-item">
           <div class="flex justify-center items-center h-full">
-            <img src="https://picsum.photos/id/106/700/800" alt="Random Image">
+            <a href="../public/gallery/8.jpg" data-fancybox="gallery" data-caption="Project #8">
+              <img src="../public/gallery/small/8.png">
+            </a>
           </div>
         </div>
-        <div class="grid-item hidden">
+        <div class="grid-item">
           <div class="flex justify-center items-center h-full">
-            <img src="https://picsum.photos/id/101/800/800" alt="Random Image">
-          </div>
-        </div>
-        <div class="grid-item hidden">
-          <div class="flex justify-center items-center h-full">
-            <img src="https://picsum.photos/id/190/800/800" alt="Random Image">
-          </div>
-        </div>
-        <div class="grid-item hidden">
-          <div class="flex justify-center items-center h-full">
-            <img src="https://picsum.photos/id/26/800/800" alt="Random Image">
+            <a href="../public/gallery/9.jpg" data-fancybox="gallery" data-caption="Project #9">
+              <img src="../public/gallery/small/9.png">
+            </a>
           </div>
         </div>
       </div>
-      <button class="expand-button text-sm bg-transparent text-black px-4 py-2 rounded-3xl border border-black flex justify-center items-center gap-2 lg:text-base">
-        Rozwiń
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-          <path d="M16 8.49529L15.1043 7.59959L8.63642 14.0769L8.63642 0.5L7.36358 0.5L7.36358 14.0675L0.895699 7.59959L9.54553e-08 8.49529L8.00471 16.5L16 8.49529Z" fill="#111111"/>
-        </svg>
+      <button class="expand-button animate-bounce text-sm bg-transparent text-black px-4 py-2 rounded-3xl border border-black">
+        <span class="expand-button-span flex justify-center items-center gap-2 lg:text-base">
+          Rozwiń
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+            <path d="M16 8.49529L15.1043 7.59959L8.63642 14.0769L8.63642 0.5L7.36358 0.5L7.36358 14.0675L0.895699 7.59959L9.54553e-08 8.49529L8.00471 16.5L16 8.49529Z" fill="#111111"/>
+          </svg>
+        </span>
+        <span class="collapse-button-span flex justify-center items-center gap-2 lg:text-base hidden">
+          Zwiń
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+            <path d="M0 8.49529L0.895699 9.391L7.36358 2.91315L7.36358 16.5L8.63642 16.5L8.63642 2.93247L15.1043 9.40038L16 8.49567L8.00471 0.490971L0 8.49529Z" fill="#111111"/>
+          </svg>          
+        </span>
       </button>
     </section>
 
-    <section class="bg-custom-grey py-16 px-8 md:h-60v lg:px-40 fullhd:px-60 2k:px-96">
-      <div class="bg-custom-green p-8 md:flex md:justify-between md:items-center md:h-full fullhd:p-28">
-        <h3 class="text-2xl text-custom-grey mb-6 md:w-9/12 md:mb-0 md:text-3xl">Zostańmy w kontakcie! <br> Znajdziesz nas na <b>Instagramie</b>.</h3>
-        <div class="md:w-3/12">
-          <p class="text-custom-grey text-base text-left mb-6">Śledź nasze najnowsze realizacje!</p>
-          <div class="px-8">
+    <section class="bg-custom-grey py-16 px-8 sm:h-60v lg:px-40 fullhd:px-60 2k:px-96">
+      <div class="bg-custom-green p-8 sm:landscape:min-h-150 sm:flex sm:justify-between sm:items-center sm:h-full fullhd:p-28">
+        <h3 class="text-custom-grey mb-6 sm:landscape:text-xl md:landscape:text-3xl sm:w-9/12 sm:mb-0 sm:text-3xl">Zostańmy w kontakcie! <br> Znajdziesz nas na <b>Instagramie</b>.</h3>
+        <div class="sm:w-3/12">
+          <p class="text-custom-grey text-left landscape:text-center mb-6 sm:text-sm md:text-base">Śledź nasze najnowsze realizacje!</p>
+          <div class="px-8 sm:landscape:px-4 md:landscape:px-8">
             <a href="#" class="text-sm bg-custom-grey text-custom-green px-4 py-2 rounded-3xl text-center block">Instagram</a>
           </div>
         </div>
       </div>
     </section>
 
-    <footer class="bg-custom-black text-custom-grey py-8 md:px-12 fullhd:px-36 2k:px-64">
-      <div class="mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div class="flex items-center mb-4 md:mb-0">
+    <footer class="bg-custom-black text-custom-grey py-8 sm:px-12 fullhd:px-36 2k:px-64">
+      <div class="mx-auto flex flex-col sm:flex-row justify-between items-center">
+        <div class="flex items-center mb-4 sm:mb-0">
           <img src="../public/logo2.svg" alt="Logo" class="h-8">
         </div>
-        <div class="text-center md:text-right">
+        <div class="text-center sm:text-right">
           <p class="mb-4">Daj znać, co możemy dla Ciebie zrobić!</p>
-          <a href="#" class="text-custom-grey bg-custom-green px-4 py-2 rounded-3xl md:mr-0 md:mb-0 block text-center">Skontaktuj się z nami</a>
+          <a href="#" class="text-custom-grey bg-custom-green px-4 py-2 rounded-3xl sm:mr-0 sm:mb-0 block text-center">Skontaktuj się z nami</a>
         </div>
       </div>
-      <div class="flex justify-center px-8 md:px-0">
+      <div class="flex justify-center px-8 sm:px-0">
         <div class="bg-custom-grey h-px my-8 w-full"></div>
       </div>
-      <div class="mx-auto flex flex-col md:flex-row justify-between items-center px-8 md:px-0">
-        <div class="flex mb-4 md:mb-0 gap-4">
+      <div class="mx-auto flex flex-col sm:flex-row justify-between items-center px-8 sm:px-0">
+        <div class="flex mb-4 sm:mb-0 gap-4">
           <a href="#" class="text-sm">Kontakt</a>
           <a href="#" class="text-sm">Instagram</a>
           <a href="#" class="text-sm">Facebook</a>
@@ -237,12 +272,12 @@
           <p class="text-sm">giarddesign@kontakt.pl</p>
         </div>
       </div>
-      <div class="mx-auto flex flex-col md:flex-row justify-between items-center px-8 mt-8 gap-4 md:px-0">
+      <div class="mx-auto flex flex-col sm:flex-row justify-between items-center px-8 mt-8 gap-4 sm:px-0">
         <p class="text-sm">Prawa zastrzeżone © 2022</p>
         <a class="text-sm" href="#">
           made by <img src="../public/logo3.svg" alt="adRespect logo">
         </a>
       </div>
-    </footer>    
+    </footer>
   </body>
 </html>

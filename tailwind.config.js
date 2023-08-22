@@ -47,6 +47,12 @@ module.exports = {
 
       '4k': '3840px',
       // => @media (min-width: 3840px) { ... }
+    },
+    minHeight: {
+      '1/2': '50%',
+      '100': '100px',
+      '150': '150px',
+      '200': '200px',
     }
   },
   plugins: [],

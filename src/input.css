@@ -78,6 +78,15 @@ body, p, a {
 
 .gallery {
   position: relative;
+  overflow: hidden;
+  max-height: 80vh;
+  opacity: 1;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Dodajemy transition dla max-height i opacity */
+}
+
+.gallery.expanded {
+  max-height: none;
+  opacity: 1;
 }
 
 .gradient-overlay {
@@ -96,11 +105,74 @@ body, p, a {
 .expand-button {
   position: absolute;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   cursor: pointer;
   z-index: 2;
+  width: 10%;
+  min-width: 100px;
 }
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 2;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-item:hover {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.search-bar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background-color: white;
+  padding: 5px;
+  height: 40px;
+}
+
+.search-input {
+  width: 0;
+  padding: 10px 0;
+  border: none;
+  background: none;
+  transition: width 0.3s ease-in-out;
+  outline: none;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.search-bar.active .search-input {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.search-icon {
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+
 
 
 

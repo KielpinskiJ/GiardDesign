@@ -673,10 +673,6 @@ video {
   height: 2rem;
 }
 
-.h-80v {
-  height: 80vh;
-}
-
 .h-90v {
   height: 90vh;
 }
@@ -714,6 +710,22 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -748,6 +760,10 @@ video {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
 }
 
 .rounded-3xl {
@@ -893,11 +909,6 @@ video {
   line-height: 1.5rem;
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -943,6 +954,11 @@ video {
 
 .underline-offset-8 {
   text-underline-offset: 8px;
+}
+
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .blur-sm {
@@ -1026,6 +1042,16 @@ body, p, a {
 
 .gallery {
   position: relative;
+  overflow: hidden;
+  max-height: 80vh;
+  opacity: 1;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  /* Dodajemy transition dla max-height i opacity */
+}
+
+.gallery.expanded {
+  max-height: none;
+  opacity: 1;
 }
 
 .gradient-overlay {
@@ -1044,110 +1070,221 @@ body, p, a {
 .expand-button {
   position: absolute;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   cursor: pointer;
+  z-index: 2;
+  width: 10%;
+  min-width: 100px;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
   z-index: 2;
 }
 
-@media (min-width: 768px) {
-  .md\:static {
+.dropdown-item {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-item:hover {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.search-bar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background-color: white;
+  padding: 5px;
+  height: 40px;
+}
+
+.search-input {
+  width: 0;
+  padding: 10px 0;
+  border: none;
+  background: none;
+  transition: width 0.3s ease-in-out;
+  outline: none;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.search-bar.active .search-input {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.search-icon {
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+@media (min-width: 640px) {
+  .sm\:static {
     position: static;
   }
 
-  .md\:mb-0 {
+  .sm\:mb-0 {
     margin-bottom: 0px;
   }
 
-  .md\:mb-12 {
+  .sm\:mb-12 {
     margin-bottom: 3rem;
   }
 
-  .md\:mb-8 {
+  .sm\:mb-8 {
     margin-bottom: 2rem;
   }
 
-  .md\:mr-0 {
+  .sm\:mr-0 {
     margin-right: 0px;
   }
 
-  .md\:block {
+  .sm\:block {
     display: block;
   }
 
-  .md\:flex {
+  .sm\:flex {
     display: flex;
   }
 
-  .md\:hidden {
+  .sm\:hidden {
     display: none;
   }
 
-  .md\:h-60v {
+  .sm\:h-60v {
     height: 60vh;
   }
 
-  .md\:h-full {
+  .sm\:h-auto {
+    height: auto;
+  }
+
+  .sm\:h-full {
     height: 100%;
   }
 
-  .md\:w-1\/2 {
+  .sm\:w-1\/2 {
     width: 50%;
   }
 
-  .md\:w-3\/12 {
+  .sm\:w-3\/12 {
     width: 25%;
   }
 
-  .md\:w-9\/12 {
+  .sm\:w-9\/12 {
     width: 75%;
   }
 
-  .md\:max-w-4xl {
+  .sm\:max-w-4xl {
     max-width: 56rem;
   }
 
-  .md\:grid-cols-3 {
+  .sm\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:flex-row {
+  .sm\:flex-row {
     flex-direction: row;
   }
 
-  .md\:flex-col {
+  .sm\:flex-col {
     flex-direction: column;
   }
 
-  .md\:items-center {
+  .sm\:items-center {
     align-items: center;
   }
 
-  .md\:justify-center {
+  .sm\:justify-center {
     justify-content: center;
   }
 
-  .md\:justify-between {
+  .sm\:justify-between {
     justify-content: space-between;
   }
 
-  .md\:rounded-none {
+  .sm\:rounded-none {
     border-radius: 0px;
   }
 
-  .md\:bg-opacity-100 {
+  .sm\:bg-opacity-100 {
     --tw-bg-opacity: 1;
   }
 
-  .md\:p-0 {
+  .sm\:p-0 {
     padding: 0px;
   }
 
-  .md\:px-0 {
+  .sm\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
   }
 
+  .sm\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .sm\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .sm\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .sm\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .sm\:text-right {
+    text-align: right;
+  }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .sm\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .sm\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
   .md\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -1158,13 +1295,24 @@ body, p, a {
     padding-bottom: 4rem;
   }
 
-  .md\:text-right {
-    text-align: right;
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 
@@ -1312,6 +1460,54 @@ body, p, a {
     padding-right: 24rem;
   }
 }
+
+@media (orientation: landscape) {
+  .landscape\:text-center {
+    text-align: center;
+  }
+}
+
+@media (min-width: 640px) {
+  @media (orientation: landscape) {
+    .sm\:landscape\:min-h-150 {
+      min-height: 150px;
+    }
+
+    .sm\:landscape\:gap-4 {
+      gap: 1rem;
+    }
+
+    .sm\:landscape\:px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .sm\:landscape\:text-xl {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  @media (orientation: landscape) {
+    .md\:landscape\:gap-8 {
+      gap: 2rem;
+    }
+
+    .md\:landscape\:px-8 {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .md\:landscape\:text-3xl {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+  }
+}
+
+
 
 
 
