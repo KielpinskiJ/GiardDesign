@@ -1334,6 +1334,10 @@ body, p, a {
     padding-bottom: 4rem;
   }
 
+  .md\:text-center {
+    text-align: center;
+  }
+
   .md\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -1505,6 +1509,18 @@ body, p, a {
 }
 
 @media (orientation: landscape) {
+  .landscape\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .landscape\:flex-row {
+    flex-direction: row;
+  }
+
+  .landscape\:gap-4 {
+    gap: 1rem;
+  }
+
   .landscape\:text-center {
     text-align: center;
   }
