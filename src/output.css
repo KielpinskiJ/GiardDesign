@@ -1176,6 +1176,57 @@ body, p, a {
   transform-origin: bottom left;
 }
 
+.footer-button, .instagram-button, .about-button, .intro-button, .intro-button-2 {
+  transition: background-color 0.3s ease, color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-button:hover {
+  background-color: #111;
+  color: #1B5B31;
+  border-color: #1B5B31;
+}
+
+.instagram-button:hover {
+  background-color: #1B5B31;
+  color: #F5F0EC;
+  border-color: #F5F0EC;
+}
+
+.about-button:hover {
+  background-color: #F5F0EC;
+  color: #1B5B31;
+}
+
+.intro-button:hover {
+  background-color: #DCC1AB;
+  color: #1B5B31;
+}
+
+.intro-button-2:hover {
+  background-color: #1B5B31;
+  color: #F5F0EC;
+}
+
+.about-button svg path, .intro-button svg path, .intro-button-2 svg path {
+  transition: fill 0.3s ease;
+}
+
+.about-button:hover svg path, .intro-button:hover svg path {
+  fill: #1B5B31;
+}
+
+.intro-button-2:hover svg path {
+  fill: #F5F0EC;
+}
+
+.offer-card {
+  transition: box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
 @media (min-width: 640px) {
   .sm\:static {
     position: static;
@@ -1565,3 +1616,4 @@ body, p, a {
     }
   }
 }
+
