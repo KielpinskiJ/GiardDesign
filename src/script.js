@@ -40,6 +40,7 @@ expandButton.addEventListener('click', () => {
 const burgerButton = document.querySelector('.burger-button');
 const mobileMenu = document.querySelector('.mobile-menu');
 const closeButton = document.querySelector('.close-button');
+const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
 
 burgerButton.addEventListener('click', () => {
   mobileMenu.classList.toggle('active');
@@ -49,6 +50,13 @@ burgerButton.addEventListener('click', () => {
 closeButton.addEventListener('click', () => {
   mobileMenu.classList.remove('active');
   document.body.style.overflow = 'auto';
+});
+
+mobileMenuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  });
 });
 
 const dropdownTrigger = document.querySelector('.dropdown-trigger');
@@ -102,3 +110,20 @@ AOS.init({
 Fancybox.bind('[data-fancybox="gallery"]', {
 
 });
+
+var mySwiper = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  loop: true,
+  autoplay: {
+    delay: 10000,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+

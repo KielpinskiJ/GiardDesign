@@ -44,10 +44,12 @@ body, p, a {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.95);
   transition: left 0.3s ease-in-out;
+  z-index: 5;
 }
 
 .mobile-menu.active {
   left: 0;
+  z-index: 5;
 }
 
 .grid-item img {
@@ -172,7 +174,31 @@ body, p, a {
   height: 40px;
 }
 
+.swiper-pagination-bullet {
+  background-color: white;
+  width: 15px;
+  height: 15px;
+}
 
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
 
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color:#DCC1AB;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
 
-
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
