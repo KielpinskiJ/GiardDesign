@@ -1,4 +1,4 @@
-# Test Task: Website for adRespect.pl Agency
+# GiardDesign: Website for adRespect.pl Agency
 
 As part of the recruitment process for [adRespect.pl](https://adrespect.pl/) agency, I've developed this responsive website as a test task. The project is based on the provided mockup from Figma and focuses on creating accurate layouts for tablet and mobile devices using Tailwind CSS framework.
 
