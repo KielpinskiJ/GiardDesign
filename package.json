@@ -1,9 +1,9 @@
 {
-  "name": "testtask-adrespect",
+  "name": "GiardDesign",
   "version": "1.0.0",
   "description": "",
   "main": "tailwind.config.js",
-  "homepage": "https://KielpinskiJ.github.io/adRespectTT",
+  "homepage": "https://KielpinskiJ.github.io/GiardDesign",
   "dependencies": {},
   "devDependencies": {
     "eslint": "^8.47.0",
