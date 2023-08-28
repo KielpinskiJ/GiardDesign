@@ -21,6 +21,6 @@ As part of the recruitment process for [adRespect.pl](https://adrespect.pl/) age
 - Macy.js
 - Figma (for design mockup)
 
-**Demo link:** You can view a live demo of the project [here](https://kielpinskij.github.io/adRespectTT/).
+**Demo link:** You can view a live demo of the project [here](https://kielpinskij.github.io/GiardDesign/).
 
 **Note:** This project was created for a recruitment test and is not intended to represent a live production website.
